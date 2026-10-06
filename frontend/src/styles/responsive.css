@@ -1,0 +1,252 @@
+@media (max-width: 1080px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .catalogue-layout,
+  .cart-layout,
+  .checkout-layout,
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-panel,
+  .cart-summary,
+  .checkout-summary {
+    position: static;
+  }
+
+  .admin-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-dashboard-grid,
+  .admin-grid.two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-main {
+    grid-template-columns: auto 1fr auto auto;
+  }
+
+  .header-search {
+    grid-column: 1 / -1;
+    order: 5;
+    padding-bottom: 12px;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .header-nav-wrap {
+    display: none;
+  }
+
+  .header-nav-wrap.open {
+    display: block;
+  }
+
+  .main-nav {
+    min-height: auto;
+    display: grid;
+    gap: 0;
+    padding: 8px 0 14px;
+  }
+
+  .main-nav a {
+    padding: 11px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-panel {
+    min-height: 300px;
+  }
+
+  .benefits-grid,
+  .category-grid,
+  .fragrance-panel,
+  .product-tabs,
+  .confirmation-grid dl {
+    grid-template-columns: 1fr;
+  }
+
+  .fragrance-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cart-item {
+    grid-template-columns: 82px 1fr;
+  }
+
+  .cart-item .quantity-control,
+  .cart-item-total {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 70;
+    width: min(82vw, 285px);
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 24px, var(--container));
+  }
+
+  .page-section {
+    padding: 24px 0 42px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.55rem;
+  }
+
+  .hero-copy p:not(.eyebrow) {
+    font-size: 0.98rem;
+  }
+
+  .benefits-grid article {
+    grid-template-columns: 38px 1fr;
+  }
+
+  .products-grid,
+  .form-grid,
+  .admin-kpi-grid,
+  .admin-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card-media {
+    min-height: 196px;
+  }
+
+  .main-image {
+    min-height: 330px;
+    padding: 18px;
+  }
+
+  .thumbnail-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-stepper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .checkout-stepper span {
+    min-height: 38px;
+    font-size: 0.82rem;
+  }
+
+  .confirmation-panel {
+    padding: 26px 18px;
+  }
+
+  .fragrance-products {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-content {
+    padding: 18px 12px;
+  }
+
+  .admin-header {
+    padding: 0 14px;
+  }
+
+  .admin-donut-wrap {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-main {
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .cart-preview,
+  .mobile-menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .section-heading-row,
+  .catalogue-toolbar,
+  .admin-page-heading.row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .catalogue-toolbar label,
+  .catalogue-toolbar select {
+    width: 100%;
+  }
+
+  .search-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item > img,
+  .cart-item .image-placeholder,
+  .cart-item .quantity-control,
+  .cart-item-total {
+    grid-column: auto;
+  }
+
+  .cart-item-total {
+    justify-items: start;
+  }
+
+  .checkout-item,
+  .confirmation-item {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .checkout-item strong,
+  .confirmation-item strong {
+    grid-column: 2;
+  }
+}
