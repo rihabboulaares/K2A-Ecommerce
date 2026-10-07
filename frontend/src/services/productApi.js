@@ -1,7 +1,20 @@
 ﻿import { API_BASE_URL } from '../config/api'
 
+function buildApiUrl(path) {
+  const cleanPath = path.startsWith('/') ? path : `/${path}`
+
+  if (/^https?:\/\//i.test(API_BASE_URL)) {
+    return new URL(`${API_BASE_URL}${cleanPath}`)
+  }
+
+  return new URL(
+    `${API_BASE_URL}${cleanPath}`,
+    window.location.origin,
+  )
+}
+
 async function request(path, params) {
-  const url = new URL(`${API_BASE_URL}${path}`)
+  const url = buildApiUrl(path)
 
   if (params) {
     Object.entries(params).forEach(([key, value]) => {
@@ -11,17 +24,21 @@ async function request(path, params) {
     })
   }
 
-  const response = await fetch(url)
+  const response = await fetch(url.toString())
 
   if (!response.ok) {
-    throw new Error('API request failed')
+    throw new Error(`API request failed: ${response.status}`)
   }
 
   return response.json()
 }
 
 export function getApiOrigin() {
-  return new URL(API_BASE_URL).origin
+  if (/^https?:\/\//i.test(API_BASE_URL)) {
+    return new URL(API_BASE_URL).origin
+  }
+
+  return window.location.origin
 }
 
 export function getCategories() {
@@ -39,5 +56,3 @@ export function getProducts(params = {}) {
 export function getProductById(id) {
   return request(`/products/${id}/`)
 }
-
-
